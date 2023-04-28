@@ -1,8 +1,17 @@
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import { Questions } from './Questions';
+import {useSelector} from "react-redux"
 
 export const Quiz = () => {
+
+  
   const [check, setChecked] = useState(undefined)
+  const state=useSelector(state=> state)
+
+  useEffect(()=>{
+    
+  })
+  
   function onNext(){
     console.log("next");
   }
