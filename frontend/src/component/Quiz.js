@@ -9,7 +9,7 @@ export const Quiz = () => {
   const state=useSelector(state=> state)
 
   useEffect(()=>{
-    
+console.log(state)
   })
   
   function onNext(){
