@@ -1,19 +1,25 @@
 import React, { useEffect, useState } from "react";
 import data from "../database/data"
 import { useFetchQuestion } from "../hooks/FetchQuestion";
+import { useSelector } from "react-redux";
 
 export const Questions = () => {
   const [check, setChecked] = useState(undefined);
    const [{isLoading,apiData,serverError}]=useFetchQuestion()
-  
   const question=data[0];
-  useEffect(()=>{
 
+
+  const state=useSelector(state=> state)
+
+  useEffect(()=>{
+          console.log(state)
   })
 
   function onSelect() {
-    console.log("radio button clicked");
+    // console.log("radio button clicked");
   }
+    if(isLoading) return <h3 className="text-light">isLoading</h3>
+    if(serverError) return <h3 className="text-light">{serverError || "Unknown Error"}</h3>
   return (
     <div className="questions">
       <h2 className="text-light">{question.question}</h2>

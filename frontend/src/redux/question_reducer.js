@@ -11,7 +11,7 @@ export const questionReducer=createSlice({
         trace:0
     },
     reducers:{
-        startExamAction:(state,action)=>{
+        startExamAction: (state,action)=>{
             return{
                 ...state,
                 queue:action.payload
