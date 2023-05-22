@@ -15,13 +15,15 @@ export const Quiz = () => {
   });
 
   function onNext() {
-    if (trace < queue.length-1) {
+    // -1
+    if (trace < queue.length) {
      
       dispatch(moveNextQuestion());
       if(result.length <= trace){
       dispatch(PushAnswer(check))
       }
     }
+    setChecked(undefined)
   }
 
   function onPrev() {
@@ -31,7 +33,7 @@ export const Quiz = () => {
   }
 
   function onChecked(check){
-    // console.log(check)
+    console.log(check)
     setChecked(check)
   }
 
@@ -46,10 +48,8 @@ export const Quiz = () => {
       {/* <Questions onChecked={onChecked} /> */}
       <Questions onChecked={onChecked} />
       <div className="grid">
-        {/* { trace > 0 ? <button className='btn prev' onClick={onPrev}>Prev</button> : <div></div>} */}
-        <button className="btn prev" onClick={onPrev}>
-          Prev
-        </button>
+        { trace > 0 ? <button className='btn prev' onClick={onPrev}>Prev</button> : <div></div>}
+        
         <button className="btn next" onClick={onNext}>
           Next
         </button>
