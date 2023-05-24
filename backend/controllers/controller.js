@@ -1,12 +1,30 @@
-export  async function getQuestions(req,res){
-   res.json("questions api get request")
+import Questions from "../models/questionSchema.js"
+import Results from "../models/resultSchema.js"
+import questions,{answers} from "../database/data.js"
+
+
+export async function getQuestions(req,res){
+   try{
+     const q =await Questions.find();
+     res.json(q)
+   }catch(error){
+    res.json({error})
+   }
 }
 
 
 // insert all questions
 
 export async function insertQuestions(req,res){
-    res.json("api post request")
+    try {
+        Questions.insertMany({ questions, answers})
+            .then(function(err, data){
+            
+            res.json({ msg: "Data Saved Successfully...!"})
+        })
+    }catch (error) {
+        res.json({ error })
+    }
 }
 
 export async function dropQuestions(req,res){
