@@ -6,7 +6,7 @@ export const ResultTable = () => {
 const [data,setData]=useState([])
 
   useEffect(()=>{
-    getServerData("http://localhost:5000/api/result", (res)=>{
+    getServerData("https://backend-bice-delta.vercel.app/api/result", (res)=>{
       setData(res)
     })
   })

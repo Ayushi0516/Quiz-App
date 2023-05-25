@@ -19,7 +19,8 @@ export const useFetchQuestion = () => {
       try {
         // let question = await data;
         const [{questions, answers}] = await getServerData(
-          `http://localhost:5000/api/questions`,
+          // `http://localhost:5000/api/questions`,
+          "https://backend-bice-delta.vercel.app/api/questions",
           (data) => data);
           
         console.log({questions,answers});
