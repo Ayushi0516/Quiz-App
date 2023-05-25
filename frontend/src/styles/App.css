@@ -9,11 +9,11 @@
 body, html{
   height: 100%;
   background: var(--dark-color);
-  /* background: var(--light-color); */
+  
 }
 
 * > *{
-    /* font-family: 'Poppins', sans-serif; */
+    
     font-family: system-ui;
 }
 
