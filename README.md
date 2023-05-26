@@ -1,3 +1,5 @@
 # Quiz-App
 
-A quiz website for organizing online quizzes and tests. It's build using React,Redux,JavaScriptand nodejs frameworks. 
+ A simple Quiz App that contains a set of curated questions and its answers and checks for the correctness of the answer given by the user. It navigates through the questions using dynamic programming.
+
+
